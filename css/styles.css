@@ -49,7 +49,7 @@ input, select {
     display: none;
 }
 
-/* Todo Header */
+/* To-do Header */
 .todo-container {
     max-width: 450px;
     margin: 3rem auto;
@@ -64,7 +64,7 @@ input, select {
     border-bottom: 1px solid #cccccc;
 }
 
-/* Todo Form */
+/* To-do Form */
 #todo-form, #edit-form {
     padding: 1rem;
     border-bottom: 1px solid #cccccc;
@@ -87,3 +87,70 @@ input, select {
     margin-top: 1rem;
 }
 
+/* To-do Bar */
+#toolbar {
+    padding: 1rem;
+    border-bottom: 1px solid #cccccc;
+    display: flex;
+}
+
+#toolbar h4 {
+    margin-bottom: .5rem;
+}
+
+#search {
+    border-right: 1px solid #dddddd;
+    padding-right: 1rem;
+    margin-right: 1rem;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+}
+
+#search form {
+    display: flex;
+}
+
+#search input {
+    width: 100%;
+    margin-right: .3rem;
+}
+
+#filter {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+#filter select {
+    flex: 1;
+}
+
+/* To-do List */
+.todo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #dddddd;
+    transition: .3s;
+}
+
+.todo h3 {
+    flex: 1;
+    font-size: .9rem;
+}
+
+.todo button {
+    margin-left: .4rem;
+}
+
+.done {
+    background-color: #395169;
+}
+
+.done h3 {
+    color: #ffffff;
+    text-decoration: line-through;
+    font-style: italic;
+}
