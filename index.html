@@ -13,10 +13,12 @@
     <script src="./js/scripts.js" defer></script> <!-- o atributo defer faz com que os arquivos carreguem depois do html -->
 </head>
 <body>
+    <!-- Container principal -->
     <div class="todo-container">
         <header>
             <h1>Todo Avançado</h1>
         </header>
+        <!-- Form para adicionar tarefa -->
         <form id="todo-form"> <!-- não usa o action porque não tem Backend nesse projeto -->
             <p>Adicione a sua tarefa</p>
             <div class="form-control">
@@ -26,6 +28,7 @@
                 </button>
             </div>
         </form>
+        <!-- Edição da tarefa -->
         <form id="edit-form">
             <p>Edite a sua tarefa</p>
             <div class="form-control">
@@ -36,6 +39,7 @@
             </div>
             <button id="cancel-edit-btn">Cancelar</button>
         </form>
+        <!-- Toolbar: Pesquisar e Filtrar -->
         <div id="toolbar">
             <div id="search">
                 <h4>Pesquisar:</h4>
@@ -55,6 +59,7 @@
                 </select>
             </div>
         </div>
+        <!-- Lista de Tarefas -->
         <div id="todo-list">
             <div class="todo">
                 <h3>Estou fazendo alguma coisa...</h3>
