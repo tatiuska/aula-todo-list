@@ -7,6 +7,10 @@
     box-sizing: border-box; /* faz com que os inputs não ultrapassem a largura máxima de seus elementos pais */
 }
 
+h1 {
+    color: #aa335a;
+}
+
 body {
     background-image: url("../img/bg.jpg");
     background-position: center;
@@ -15,8 +19,8 @@ body {
 
 button {
     background-color: #fdfdfd;
-    color: #102f5e;
-    border: 2px solid #102f5e;
+    color: #2f524c;
+    border: 2px solid #2f524c;
     padding: .3rem .6rem;
     font-size: 1rem;
     cursor: pointer;
@@ -27,7 +31,7 @@ button {
 }
 
 button:hover {
-    background-color: #102f5e;
+    background-color: #2f524c;
     color: #ffffff;
 }
 
@@ -36,7 +40,7 @@ button:hover > i {
 }
 
 button i {
-    color: #102f5e;
+    color: #2f524c;
     font-weight: bold;
     pointer-events: none;
 }
@@ -146,7 +150,7 @@ input, select {
 }
 
 .done {
-    background-color: #395169;
+    background-color: #4f8785;
 }
 
 .done h3 {

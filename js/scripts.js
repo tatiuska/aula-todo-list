@@ -6,6 +6,8 @@ const editForm = document.querySelector("#edit-form");
 const editInput = document.querySelector("#edit-input");
 const cancelEditBtn = document.querySelector("#cancel-edit-btn");
 
+let oldInputValue;
+
 // Funções 
 const saveTodo = (text) => {
     // cria div
@@ -41,7 +43,27 @@ const saveTodo = (text) => {
     // vai para o início da caixa de formulário
     todoInput.focus();
 
-}
+};
+
+// Função para esconder outras opções de ações quando for editar uma tarefa
+const toggleForms = () => {
+    editForm.classList.toggle("hide");
+    todoForm.classList.toggle("hide");
+    todoList.classList.toggle("hide");
+};
+
+const updateTodo = (text) => { // editInputValue pode ser alternativa para o editInputValue
+    
+    const todos = document.querySelectorAll(".todo");
+
+    todos.forEach((todo) => {
+        let todoTitle = todo.querySelector("h3");
+
+        if(todoTitle.innerText === oldInputValue) {
+            todoTitle.innerText = text;
+        };
+    }) 
+};
 
 // Eventos
 todoForm.addEventListener("submit", (e) => {
@@ -56,6 +78,11 @@ todoForm.addEventListener("submit", (e) => {
 document.addEventListener("click", (e) => {
     const targetEl = e.target;
     const parentEl = targetEl.closest("div"); // seleciona o elemento-pai (div) mais próximo, no caso o 'todo done'
+    let todoTitle;
+
+    if(parentEl && parentEl.querySelector("h3")) {
+        todoTitle = parentEl.querySelector("h3").innerText;
+    };
 
     //tudo que é criado no evento é aplicado ao evento-pai (parentEl)
     
@@ -71,6 +98,28 @@ document.addEventListener("click", (e) => {
 
     // ação de editar tarefa
     if(targetEl.classList.contains("edit-todo")) {
-        console.log("Editou");
+        toggleForms();
+
+        editInput.value = todoTitle; // muda o valor do input
+        oldInputValue = todoTitle; // salva o valor anterior na memória
     };
+});
+
+cancelEditBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    toggleForms();
+});
+
+// evento para submeter o formulário
+editForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const editInputValue = editInput.value;
+
+    if(editInputValue) {
+        updateTodo(editInputValue);
+    };
+
+    toggleForms();
 });
